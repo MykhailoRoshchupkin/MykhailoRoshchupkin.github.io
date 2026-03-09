@@ -4,23 +4,24 @@
 	<script type = "text/javascript">
         window.alert("Welcome To The Store!");
 		var name;
-		name = window.prompt("Please enter your name", "Misha");
+		name = window.prompt("Please enter your name", "Name");
         var itm;
-		itm = window.prompt("Please enter what you want to buy", "apple");
+		itm = window.prompt("Please enter what you want to buy", "Product");
         var cnt;
-		cnt = window.prompt("Please enter the amount of products you want to buy", "1");
+		cnt = window.prompt("Please enter the amount of products you want to buy (1-99)", "1");
         cnt = parseInt(cnt);
 		
         now = new Date();
         hour = now.getHours();
-        if (hour < 12) {document.writeln("<h1>Good morning " + name + "!");}
+        if (hour < 12) {document.writeln("<h1>Good morning " + name + "! Thank you for your order.");}
         else if (hour < 18) {document.writeln("<h1>Good afternoon " + name + "!");}
         else {document.writeln("<h1>Good evening " + name + "!");}
         document.writeln("<h2> You have ordered " + cnt + " " + itm + ".");
         now.setDate(now.getDate() + 7);
         day = now.getDate();
         month = now.getMonth();
-        document.writeln(day + " " + month + ".");
+        year = now.getFullYear();
+        document.writeln("<h2>Expected arrival date: " + month + "." + day + "." + year + " (In 7 days)");
 	</script>
 </head>
 
