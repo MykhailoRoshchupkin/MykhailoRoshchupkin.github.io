@@ -14,8 +14,8 @@
         now = new Date();
         hour = now.getHours();
         if (hour < 12) {document.writeln("<h1>Good morning " + name + "! Thank you for your order.");}
-        else if (hour < 18) {document.writeln("<h1>Good afternoon " + name + "!");}
-        else {document.writeln("<h1>Good evening " + name + "!");}
+        else if (hour < 18) {document.writeln("<h1>Good afternoon " + name + "! Thank you for your order.");}
+        else {document.writeln("<h1>Good evening " + name + "! Thank you for your order.");}
         document.writeln("<h2> You have ordered " + cnt + " " + itm + ".");
         now.setDate(now.getDate() + 7);
         day = now.getDate();
