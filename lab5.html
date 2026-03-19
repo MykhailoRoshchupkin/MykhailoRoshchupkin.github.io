@@ -1,32 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 	<script type = "text/javascript">
         function reg()
         {
+            var name = document.getElementById("fname");
+            var lastname = document.getElementById("lname");
 		    var login = document.getElementById("loginbox");
             var password = document.getElementById("passbox");
+            var mail = document.getElementById("email");
             
-            
-            
-            
-            var i = 1;
-            if (i == 1)
+            if (name.value == "" || lastname.value == "" || login.value == "" || password.value == "" || mail.value == "")
             {
-                password.style.color = "red"; 
-                login.style.color = "red"; 
+                alert("All fields must be present.");
+            }
+            else
+            {
+                var passtext = password.value;
+                var len = passtext.length;
+                var check = false;
+                for (var i = 0; i < len; i+=1)
+                {
+                    if (passtext.charAt(i) == '!' || passtext.charAt(i) == "?")
+                    {
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    password.style.color = "red"; 
+                    alert("Password must contain a special character.");
+                }
+                else
+                {
+                    alert("Registration successfull!");
+                    var page = document.getElementById("info");
+                }
             }
         }
 
     </script>
 </head>
 <body>
-    <span id="logtext">LOGIN    </span>
-    <input id="loginbox" type="text" />
-    <br>
-    <span id="passtext">PASSWORD </span>
-    <input id="passbox" type="text" />
-    <br>
-    <button onclick="reg();">REGISTER </button>
+    <div class="container p-5" id="info">
+	    <h1> WELCOME </h1> <br>
+        <h3>Please register, prior to visiting our coding contest page!</h3> <br>
+        <table class="table">
+            <tbody>
+            <tr>
+                <td><span id="logtext">First Name</span></td>
+                <td><input id="fname" type="text" /></td>
+            </tr>
+            <tr>
+                <td><span id="logtext">Last Name</span></td>
+                <td><input id="lname" type="text" /></td>
+            </tr>
+            <tr>
+                <td><span id="logtext">LOGIN</span></td>
+                <td><input id="loginbox" type="text" /></td>
+            </tr>
+            <tr>
+                <td><span id="passtext">PASSWORD </span></td>
+                <td><input id="passbox" type="text" /></td>
+            </tr>
+            <tr>
+                <td><span id="logtext">Email    </span></td>
+                <td><input id="email" type="text" /></td>
+            </tr>
+            </tbody>
+        </table>
+        
+        
+        <button onclick="reg();">REGISTER </button>
+    </div>
 </body>
 </html>
