@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type = "text/javascript">
+        function reg()
+        {
+		    var login = document.getElementById("loginbox");
+            var password = document.getElementById("passbox");
+            
+            
+            
+            
+            var i = 1;
+            if (i == 1)
+            {
+                password.style.color = "red"; 
+                login.style.color = "red"; 
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <span id="logtext">LOGIN    </span>
+    <input id="loginbox" type="text" />
+    <br>
+    <span id="passtext">PASSWORD </span>
+    <input id="passbox" type="text" />
+    <br>
+    <button onclick="reg();">REGISTER </button>
+</body>
+</html>
