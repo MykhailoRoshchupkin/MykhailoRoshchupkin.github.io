@@ -14,8 +14,9 @@
 		    var login = document.getElementById("loginbox");
             var password = document.getElementById("passbox");
             var mail = document.getElementById("email");
-            
-            if (name.value == "" || lastname.value == "" || login.value == "" || password.value == "" || mail.value == "")
+            var birth = document.getElementById("dbirth");
+
+            if (name.value == "" || lastname.value == "" || login.value == "" || password.value == "" || mail.value == "" || birth.value == "")
             {
                 alert("All fields must be present.");
             }
@@ -35,11 +36,30 @@
                 {
                     password.style.color = "red"; 
                     alert("Password must contain a special character.");
+                    password.value = "asterics";
                 }
                 else
                 {
+                    password.style.color = "black"; 
                     alert("Registration successfull!");
-                    var page = document.getElementById("info");
+                    var register = document.getElementById("regg");
+                    register.remove();
+                    var s = "";
+                    for (var i = 0; i < len;i +=1)
+                    {
+                        s += '*';
+                    }
+                    password.value = s;
+                    name.disabled = true;
+                    lastname.disabled = true;
+                    login.disabled = true;
+                    password.disabled = true;
+                    mail.disabled = true;
+                    birth.disabled = true;
+                    var message1 = document.getElementById("wel");
+                    message1.textContent = "Successfull!";
+                    var message2 = document.getElementById("pag");
+                    message2.textContent = "Thank you for registering on our page. You can use it freely now!";
                 }
             }
         }
@@ -47,9 +67,11 @@
     </script>
 </head>
 <body>
-    <div class="container p-5" id="info">
-	    <h1> WELCOME </h1> <br>
-        <h3>Please register, prior to visiting our coding contest page!</h3> <br>
+    <div class="container p-5">
+        <div id="info">
+            <h1> <span id="wel">WELCOME</span></h1> <br>
+            <h3> <span id="pag">Please register, prior to visiting our coding contest page!</span></h3> <br>
+        </div>
         <table class="table">
             <tbody>
             <tr>
@@ -72,11 +94,17 @@
                 <td><span id="logtext">Email    </span></td>
                 <td><input id="email" type="text" /></td>
             </tr>
+            <tr>
+                <td><span id="logtext">Date Of Birth    </span></td>
+                <td><input id="dbirth" type="text" /></td>
+            </tr>
             </tbody>
         </table>
         
         
-        <button onclick="reg();">REGISTER </button>
+        <button onclick="reg();" id="regg">REGISTER </button>
+        
+        
     </div>
 </body>
 </html>
