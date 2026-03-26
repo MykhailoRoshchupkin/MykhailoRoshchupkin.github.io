@@ -49,6 +49,9 @@
             table.appendChild(row);
         }
         document.getElementById("main").appendChild(table);
+
+        var pict = document.getElementById("pic");
+        pict.src = myObj["catPhoto"];
     }
 </script>
 </head>
@@ -57,6 +60,7 @@
 <body>
     <div class="container p-5" id = "main">
         <button onclick="GetData();" id="start">GetData </button>
+        <img src="MykhailoRoshchupkin.jpg" alt="Pic" id = "pic">
     </div>
     
 </body>
