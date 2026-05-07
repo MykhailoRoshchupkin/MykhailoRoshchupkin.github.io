@@ -17,9 +17,9 @@
             localStorage.setItem("ID", steamID);
             window.location.href = "https://mykhailoroshchupkin.github.io/Players.html";
         }
-        function click()
+        function search()
         {
-            steamId = document.getElementById("sID").textContent;
+            steamID = document.getElementById("sID").value;
             localStorage.setItem("ID", steamID);
             window.location.href = "https://mykhailoroshchupkin.github.io/Players.html";
         }
@@ -133,7 +133,7 @@
             </ul>
             <form class="d-flex" role="search">
                 <input id ="sID" class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit" onclick="click()">Search</button>
+                <button class="btn btn-outline-success" type="button" onclick="search()">Search</button>
             </form>
             </div>
         </div>

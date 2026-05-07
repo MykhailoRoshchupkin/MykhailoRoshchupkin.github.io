@@ -9,9 +9,9 @@
     
     
     <script type = "text/javascript">
-        function click()
+        function search()
         {
-            steamId = document.getElementById("sID").textContent;
+            steamID = document.getElementById("sID").value;
             localStorage.setItem("ID", steamID);
             window.location.href = "https://mykhailoroshchupkin.github.io/Players.html";
         }
@@ -25,26 +25,27 @@
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">DOTA 2 STATISTICS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">   
-                <a class="nav-link" href="https://mykhailoroshchupkin.github.io/Project">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://mykhailoroshchupkin.github.io/ProPlayers">Pro Players</a>
-            </li>
-        </ul>
-        <form class="d-flex" role="search">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">DOTA 2 STATISTICS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">   
+                    <a class="nav-link" href="https://mykhailoroshchupkin.github.io/Project">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://mykhailoroshchupkin.github.io/ProPlayers">Pro Players</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
                 <input id ="sID" class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit" onclick="click()">Search</button>
+                <button class="btn btn-outline-success" type="button" onclick="search()">Search</button>
             </form>
+            </div>
         </div>
-    </div>
+    </nav>
     <!-- /NAVBAR -->
 
 
