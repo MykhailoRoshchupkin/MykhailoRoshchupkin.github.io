@@ -11,6 +11,18 @@
     <script type = "text/javascript">
         proPlayers = [];
         page = 0;
+        function Inspect(num)
+        {
+            steamID = proPlayers[num + (page * 8)]["steamid"];
+            localStorage.setItem("ID", steamID);
+            window.location.href = "https://mykhailoroshchupkin.github.io/Players.html";
+        }
+        function click()
+        {
+            steamId = document.getElementById("sID").textContent;
+            localStorage.setItem("ID", steamID);
+            window.location.href = "https://mykhailoroshchupkin.github.io/Players.html";
+        }
         function min1()
         {
             if (page != 0)
@@ -120,14 +132,20 @@
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input id ="sID" class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit" onclick="click()">Search</button>
             </form>
             </div>
         </div>
     </nav>
     <!-- /NAVBAR -->
+
+
+
     <br>
+
+
+
     <!-- Pro Players 1row -->
     <div class ="row">
         <div class = "col-2">
@@ -136,7 +154,7 @@
                 <div class="card-body">
                     <h5 class="card-title" id="personaname0">Card title</h5>
                     <p class="card-text" id="team_name0">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Inspect</a>
+                    <a  class="btn btn-primary" onclick="Inspect(0);">Inspect</a>
                 </div>
             </div>
         </div>
@@ -149,7 +167,7 @@
                 <div class="card-body">
                     <h5 class="card-title" id="personaname1">Card title</h5>
                     <p class="card-text" id="team_name1">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Inspect</a>
+                    <a  class="btn btn-primary" onclick="Inspect(1);">Inspect</a>
                 </div>
             </div>
         </div>
@@ -162,7 +180,7 @@
                 <div class="card-body">
                     <h5 class="card-title" id="personaname2">Card title</h5>
                     <p class="card-text" id="team_name2">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Inspect</a>
+                    <a  class="btn btn-primary" onclick="Inspect(2);">Inspect</a>
                 </div>
             </div>
         </div>
@@ -175,7 +193,7 @@
                 <div class="card-body">
                     <h5 class="card-title" id="personaname3">Card title</h5>
                     <p class="card-text" id="team_name3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Inspect</a>
+                    <a  class="btn btn-primary" onclick="Inspect(3);">Inspect</a>
                 </div>
             </div>
         </div>
@@ -183,7 +201,13 @@
         </div>
     </div>
     <!-- /Pro Players 1row -->
+
+
+
     <br>
+
+
+
     <!-- Pro Players 2row -->
     <div class ="row">
         <div class = "col-2">
@@ -192,7 +216,7 @@
                 <div class="card-body">
                     <h5 class="card-title" id="personaname4">Card title</h5>
                     <p class="card-text" id="team_name4">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Inspect</a>
+                    <a  class="btn btn-primary" onclick="Inspect(4);">Inspect</a>
                 </div>
             </div>
         </div>
@@ -205,7 +229,7 @@
                 <div class="card-body">
                     <h5 class="card-title" id="personaname5">Card title</h5>
                     <p class="card-text" id="team_name5">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Inspect</a>
+                    <a  class="btn btn-primary" onclick="Inspect(5);">Inspect</a>
                 </div>
             </div>
         </div>
@@ -218,7 +242,7 @@
                 <div class="card-body">
                     <h5 class="card-title" id="personaname6">Card title</h5>
                     <p class="card-text" id="team_name6">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Inspect</a>
+                    <a  class="btn btn-primary" onclick="Inspect(6);">Inspect</a>
                 </div>
             </div>
         </div>
@@ -231,7 +255,7 @@
                 <div class="card-body">
                     <h5 class="card-title" id="personaname7">Card title</h5>
                     <p class="card-text" id="team_name7">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Inspect</a>
+                    <a  class="btn btn-primary" onclick="Inspect(7);">Inspect</a>
                 </div>
             </div>
         </div>
