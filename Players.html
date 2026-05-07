@@ -50,6 +50,10 @@
             const myObj1 = JSON.parse(result1);
             player["win"] = myObj1["win"];
             player["lose"] = myObj1["lose"];
+            if (player["name"] == null)
+            {
+                window.alert("Incorrect ID.");
+            }
         }
         function Inspect()
         {
@@ -114,13 +118,13 @@
             <div class="card col-2" >
                 <img id = "avatarfull" src="..." class="card-img-top" alt="..." id = "avatarfull0">
                 <div class="card-body">
-                    <h5 class="card-title" id="name">Card title</h5>
-                    <p class="card-text" id="rank_tier">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <p class="card-text" id="leaderboard_rank">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <p class="card-text" id="win">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <p class="card-text" id="lose">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <p class="card-text" id="loccountrycode">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <p class="card-text" id="last_login">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <h5 class="card-title" id="name">ERROR</h5>
+                    <p class="card-text" id="rank_tier"></p>
+                    <p class="card-text" id="leaderboard_rank"></p>
+                    <p class="card-text" id="win"></p>
+                    <p class="card-text" id="lose"></p>
+                    <p class="card-text" id="loccountrycode"></p>
+                    <p class="card-text" id="last_login"></p>
                     
                     <a  class="btn btn-primary" onclick="Inspect();">Steam Profile</a>
                 </div>
