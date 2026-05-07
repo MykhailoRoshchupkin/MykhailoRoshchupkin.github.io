@@ -22,7 +22,6 @@
         async function GetData() 
         {
             steamID64 = localStorage.getItem("ID");
-            steamID64 = "76561197961562353";
             steamID = BigInt(steamID64) - BigInt("76561197960265728");
             const url = 'https://api.opendota.com/api/players/' + steamID.toString();
             const options =
