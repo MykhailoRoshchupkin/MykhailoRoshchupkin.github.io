@@ -9,7 +9,12 @@
     
     
     <script type = "text/javascript">
-        
+        function click()
+        {
+            steamId = document.getElementById("sID").textContent;
+            localStorage.setItem("ID", steamID);
+            window.location.href = "https://mykhailoroshchupkin.github.io/Players.html";
+        }
     </script>
 
 </head>
@@ -35,9 +40,9 @@
             </li>
         </ul>
         <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+                <input id ="sID" class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit" onclick="click()">Search</button>
+            </form>
         </div>
     </div>
     <!-- /NAVBAR -->
