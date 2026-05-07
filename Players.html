@@ -32,17 +32,32 @@
             const result = await response.text();
             const myObj = JSON.parse(result);
             player["rank_tier"] = myObj["rank_tier"];
-            window.alert(steamID64);
-            
+            player["leaderboard_rank"] = myObj["leaderboard_rank"];
+            player["name"] = myObj["profile"]["name"];
+            player["avatarfull"] = myObj["profile"]["avatarfull"];
+            player["profileurl"] = myObj["profile"]["profileurl"];
+            player["last_login"] = myObj["profile"]["last_login"];
+            player["loccountrycode"] = myObj["profile"]["loccountrycode"];
         }
-
+        function Inspect()
+        {
+            window.location.href = player["profileurl"];
+        }
+        function Fill()
+        {
+            document.getElementById("avatarfull").src =  player["avatarfull"];
+            document.getElementById("name").textContent =  "NickName: " + player["name"];
+            document.getElementById("rank_tier").textContent = "Profile rank: " + player["rank_tier"];
+            document.getElementById("loccountrycode").textContent = "Country: " + player["loccountrycode"];
+            document.getElementById("last_login").textContent = "Last Login: " + player["last_login"];
+        }
         async function main() 
         {
-            GetData();
-
+            await GetData();
+            Fill();
         }
 
-        main();
+        window.onload = main;
     </script>
 
 </head>
@@ -75,15 +90,25 @@
         </div>
     </nav>
     <!-- /NAVBAR -->
-
+    <br>
 
     <!-- Player -->
-    <div class="card mb-3">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+     <div class ="row">
+        <div class = "col-5">
+        </div>
+            <div class="card col-2" >
+                <img id = "avatarfull" src="..." class="card-img-top" alt="..." id = "avatarfull0">
+                <div class="card-body">
+                    <h5 class="card-title" id="name">Card title</h5>
+                    <p class="card-text" id="rank_tier">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <p class="card-text" id="loccountrycode">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <p class="card-text" id="last_login">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    
+                    <a  class="btn btn-primary" onclick="Inspect();">Steam Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class = "col-5">
         </div>
     </div>
     <!-- /Player -->
