@@ -32,7 +32,7 @@
                 player["country_code"] = myObj[x]["country_code"];
                 player["team_name"] = myObj[x]["team_name"];
                 player["team_tag"] = myObj[x]["team_tag"];
-             
+                player["loccountrycode"] = myObj[x]["loccountrycode"];
                 proP[i] = player;
 		        if (player["steamid"] == null)
                 {
@@ -45,7 +45,8 @@
         async function FillCard(name)
         {
             document.getElementById("avatarfull" + name).src = proPlayers[parseInt(name)]["avatarfull"];
-
+            document.getElementById("personaname" + name).textContent = proPlayers[parseInt(name)]["name"];
+            document.getElementById("team_name" + name).textContent = "TEAM: " + proPlayers[parseInt(name)]["team_name"];
         }
         async function main() 
         {
@@ -100,9 +101,9 @@
             <div class="card" >
                 <img src="..." class="card-img-top" alt="..." id = "avatarfull0">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title" id="personaname0">Card title</h5>
+                    <p class="card-text" id="team_name0">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
@@ -113,9 +114,9 @@
             <div class="card" >
                 <img src="..." class="card-img-top" alt="..." id = "avatarfull1">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title" id="personaname1">Card title</h5>
+                    <p class="card-text" id="team_name1">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
@@ -126,9 +127,9 @@
             <div class="card" >
                 <img src="..." class="card-img-top" alt="..." id = "avatarfull2">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title" id="personaname2">Card title</h5>
+                    <p class="card-text" id="team_name2">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
@@ -139,9 +140,9 @@
             <div class="card" >
                 <img src="..." class="card-img-top" alt="..." id = "avatarfull3">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title" id="personaname3">Card title</h5>
+                    <p class="card-text" id="team_name3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
@@ -156,9 +157,9 @@
             <div class="card" >
                 <img src="..." class="card-img-top" alt="..." id = "avatarfull4">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title" id="personaname4">Card title</h5>
+                    <p class="card-text" id="team_name4">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
@@ -169,9 +170,9 @@
             <div class="card" >
                 <img src="..." class="card-img-top" alt="..." id = "avatarfull5">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title" id="personaname5">Card title</h5>
+                    <p class="card-text" id="team_name5">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
@@ -182,9 +183,9 @@
             <div class="card" >
                 <img src="..." class="card-img-top" alt="..." id = "avatarfull6">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title" id="personaname6">Card title</h5>
+                    <p class="card-text" id="team_name6">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
@@ -195,9 +196,9 @@
             <div class="card" >
                 <img src="..." class="card-img-top" alt="..." id = "avatarfull7">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title" id="personaname7">Card title</h5>
+                    <p class="card-text" id="team_name7">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Inspect</a>
                 </div>
             </div>
         </div>
