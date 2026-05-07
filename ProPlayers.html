@@ -19,7 +19,10 @@
             position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100vh;
             z-index: 0;
+            pointer-events: none;
         }
 
         .carousel-item img {
@@ -27,9 +30,16 @@
             width: 100vw;
             object-fit: cover;
         }
-        .row, .pagination, .container, .card {
+
+        .ui-layer {
             position: relative;
-            z-index: 2;
+            z-index: 10;
+        }
+
+        .bg-layer {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
         }
     </style>
     <title>DOTA 2 STATISTICS</title>
@@ -144,185 +154,185 @@
 
 
 <body>
-
-
+    
     <!-- NAVBAR -->
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">DOTA 2 STATISTICS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">   
-                    <a class="nav-link" href="https://mykhailoroshchupkin.github.io/Project">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://mykhailoroshchupkin.github.io/ProPlayers">Pro Players</a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input id ="sID" class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="button" onclick="search()">Search</button>
-            </form>
+    <div class="ui-layer">
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">DOTA 2 STATISTICS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">   
+                        <a class="nav-link" href="https://mykhailoroshchupkin.github.io/Project">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://mykhailoroshchupkin.github.io/ProPlayers">Pro Players</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input id ="sID" class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
+                    <button class="btn btn-outline-success" type="button" onclick="search()">Search</button>
+                </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <!-- /NAVBAR -->
 
-
     <!-- IMAGES -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active " data-bs-interval="5000">
-            <img src="342127.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-            <img src="396395.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-            <img src="473330.jpg" class="d-block w-100" alt="...">
+    <div class="bg-layer">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active " data-bs-interval="5000">
+                <img src="342127.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                <img src="396395.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                <img src="473330.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
         </div>
     </div>
     <!-- /IMAGES -->
 
-
-
     <br>
 
 
-
-    <!-- Pro Players 1row -->
-    <div class ="row">
-        <div class = "col-2">
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="..." id = "avatarfull0">
-                <div class="card-body">
-                    <h5 class="card-title" id="personaname0">Card title</h5>
-                    <p class="card-text" id="team_name0">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a  class="btn btn-primary" onclick="Inspect(0);">Inspect</a>
+    <div class="ui-layer">
+        <!-- Pro Players 1row -->
+        <div class ="row">
+            <div class = "col-2">
+                <div class="card text-bg-dark mb-3" >
+                    <img src="..." class="card-img-top" alt="..." id = "avatarfull0">
+                    <div class="card-body">
+                        <h5 class="card-title" id="personaname0">Card title</h5>
+                        <p class="card-text" id="team_name0">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a  class="btn btn-primary" onclick="Inspect(0);">Inspect</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class = "col-1">
-        </div>
+            <div class = "col-1">
+            </div>
 
-        <div class = "col-2">
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="..." id = "avatarfull1">
-                <div class="card-body">
-                    <h5 class="card-title" id="personaname1">Card title</h5>
-                    <p class="card-text" id="team_name1">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a  class="btn btn-primary" onclick="Inspect(1);">Inspect</a>
+            <div class = "col-2">
+                <div class="card text-bg-dark mb-3" >
+                    <img src="..." class="card-img-top" alt="..." id = "avatarfull1">
+                    <div class="card-body">
+                        <h5 class="card-title" id="personaname1">Card title</h5>
+                        <p class="card-text" id="team_name1">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a  class="btn btn-primary" onclick="Inspect(1);">Inspect</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class = "col-1"> 
-        </div>
+            <div class = "col-1"> 
+            </div>
 
-        <div class = "col-2">
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="..." id = "avatarfull2">
-                <div class="card-body">
-                    <h5 class="card-title" id="personaname2">Card title</h5>
-                    <p class="card-text" id="team_name2">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a  class="btn btn-primary" onclick="Inspect(2);">Inspect</a>
+            <div class = "col-2">
+                <div class="card text-bg-dark mb-3" >
+                    <img src="..." class="card-img-top" alt="..." id = "avatarfull2">
+                    <div class="card-body">
+                        <h5 class="card-title" id="personaname2">Card title</h5>
+                        <p class="card-text" id="team_name2">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a  class="btn btn-primary" onclick="Inspect(2);">Inspect</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class = "col-1">
-        </div>
+            <div class = "col-1">
+            </div>
 
-        <div class = "col-2">
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="..." id = "avatarfull3">
-                <div class="card-body">
-                    <h5 class="card-title" id="personaname3">Card title</h5>
-                    <p class="card-text" id="team_name3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a  class="btn btn-primary" onclick="Inspect(3);">Inspect</a>
+            <div class = "col-2">
+                <div class="card text-bg-dark mb-3" >
+                    <img src="..." class="card-img-top" alt="..." id = "avatarfull3">
+                    <div class="card-body">
+                        <h5 class="card-title" id="personaname3">Card title</h5>
+                        <p class="card-text" id="team_name3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a  class="btn btn-primary" onclick="Inspect(3);">Inspect</a>
+                    </div>
                 </div>
             </div>
+            <div class = "col-1">
+            </div>
         </div>
-        <div class = "col-1">
+        <!-- /Pro Players 1row -->
+
+
+
+        <br>
+
+
+
+        <!-- Pro Players 2row -->
+        <div class ="row">
+            <div class = "col-2">
+                <div class="card text-bg-dark mb-3" >
+                    <img src="..." class="card-img-top" alt="..." id = "avatarfull4">
+                    <div class="card-body">
+                        <h5 class="card-title" id="personaname4">Card title</h5>
+                        <p class="card-text" id="team_name4">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a  class="btn btn-primary" onclick="Inspect(4);">Inspect</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-1">
+            </div>
+
+            <div class = "col-2">
+                <div class="card text-bg-dark mb-3" >
+                    <img src="..." class="card-img-top" alt="..." id = "avatarfull5">
+                    <div class="card-body">
+                        <h5 class="card-title" id="personaname5">Card title</h5>
+                        <p class="card-text" id="team_name5">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a  class="btn btn-primary" onclick="Inspect(5);">Inspect</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-1"> 
+            </div>
+
+            <div class = "col-2">
+                <div class="card text-bg-dark mb-3" >
+                    <img src="..." class="card-img-top" alt="..." id = "avatarfull6">
+                    <div class="card-body">
+                        <h5 class="card-title" id="personaname6">Card title</h5>
+                        <p class="card-text" id="team_name6">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a  class="btn btn-primary" onclick="Inspect(6);">Inspect</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-1">
+            </div>
+
+            <div class = "col-2">
+                <div class="card text-bg-dark mb-3" >
+                    <img src="..." class="card-img-top" alt="..." id = "avatarfull7">
+                    <div class="card-body">
+                        <h5 class="card-title" id="personaname7">Card title</h5>
+                        <p class="card-text" id="team_name7">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        <a  class="btn btn-primary" onclick="Inspect(7);">Inspect</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "col-1">
+            </div>
         </div>
+        <!-- /Pro Players 2row -->
+        <br>
+        <!-- Bottom Nav -->
+        <nav aria-label="Page navigation example" >
+            <ul class="pagination justify-content-end " >
+                <li class="page-item"><a class="page-link text-bg-dark" onclick="min1();">Previous</a> </li>
+                <li class="page-item"><a class="page-link text-bg-dark" onclick="odin();">1</a></li>
+                <li class="page-item"><a class="page-link text-bg-dark" onclick="dva();">2</a></li>
+                <li class="page-item"><a class="page-link text-bg-dark" onclick="tri();">3</a></li>
+                <li class="page-item"><a class="page-link text-bg-dark" onclick="plus1();">Next</a></li>
+            </ul>
+        </nav>
+        <!-- /Bottom Nav -->
     </div>
-    <!-- /Pro Players 1row -->
-
-
-
-    <br>
-
-
-
-    <!-- Pro Players 2row -->
-    <div class ="row">
-        <div class = "col-2">
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="..." id = "avatarfull4">
-                <div class="card-body">
-                    <h5 class="card-title" id="personaname4">Card title</h5>
-                    <p class="card-text" id="team_name4">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a  class="btn btn-primary" onclick="Inspect(4);">Inspect</a>
-                </div>
-            </div>
-        </div>
-        <div class = "col-1">
-        </div>
-
-        <div class = "col-2">
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="..." id = "avatarfull5">
-                <div class="card-body">
-                    <h5 class="card-title" id="personaname5">Card title</h5>
-                    <p class="card-text" id="team_name5">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a  class="btn btn-primary" onclick="Inspect(5);">Inspect</a>
-                </div>
-            </div>
-        </div>
-        <div class = "col-1"> 
-        </div>
-
-        <div class = "col-2">
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="..." id = "avatarfull6">
-                <div class="card-body">
-                    <h5 class="card-title" id="personaname6">Card title</h5>
-                    <p class="card-text" id="team_name6">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a  class="btn btn-primary" onclick="Inspect(6);">Inspect</a>
-                </div>
-            </div>
-        </div>
-        <div class = "col-1">
-        </div>
-
-        <div class = "col-2">
-            <div class="card" >
-                <img src="..." class="card-img-top" alt="..." id = "avatarfull7">
-                <div class="card-body">
-                    <h5 class="card-title" id="personaname7">Card title</h5>
-                    <p class="card-text" id="team_name7">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                    <a  class="btn btn-primary" onclick="Inspect(7);">Inspect</a>
-                </div>
-            </div>
-        </div>
-        <div class = "col-1">
-        </div>
-    </div>
-    <!-- /Pro Players 2row -->
-    <br>
-    <!-- Bottom Nav -->
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-end">
-            <li class="page-item"><a class="page-link" onclick="min1();">Previous</a> </li>
-            <li class="page-item"><a class="page-link" onclick="odin();">1</a></li>
-            <li class="page-item"><a class="page-link" onclick="dva();">2</a></li>
-            <li class="page-item"><a class="page-link" onclick="tri();">3</a></li>
-            <li class="page-item"><a class="page-link" onclick="plus1();">Next</a></li>
-        </ul>
-    </nav>
-    <!-- /Bottom Nav -->
-
 </body>
 </html>

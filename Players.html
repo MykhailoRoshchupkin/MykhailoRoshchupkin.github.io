@@ -19,7 +19,10 @@
             position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100vh;
             z-index: 0;
+            pointer-events: none;
         }
 
         .carousel-item img {
@@ -27,11 +30,20 @@
             width: 100vw;
             object-fit: cover;
         }
-        .row, .pagination, .container, .card {
+
+        .ui-layer {
             position: relative;
-            z-index: 2;
+            z-index: 10;
+        }
+        
+        .bg-layer {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
         }
     </style>
+
+
     <title>DOTA 2 STATISTICS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -113,43 +125,47 @@
 
 
     <!-- NAVBAR -->
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">DOTA 2 STATISTICS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">   
-                    <a class="nav-link" href="https://mykhailoroshchupkin.github.io/Project">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://mykhailoroshchupkin.github.io/ProPlayers">Pro Players</a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input id ="sID" class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="button" onclick="search()">Search</button>
-            </form>
+    <div class="ui-layer">
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">DOTA 2 STATISTICS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">   
+                        <a class="nav-link" href="https://mykhailoroshchupkin.github.io/Project">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://mykhailoroshchupkin.github.io/ProPlayers">Pro Players</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input id ="sID" class="form-control me-2" type="search" placeholder="Player ID" aria-label="Search"/>
+                    <button class="btn btn-outline-success" type="button" onclick="search()">Search</button>
+                </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <!-- /NAVBAR -->
 
     <br> 
 
     <!-- IMAGES -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active " data-bs-interval="5000">
-            <img src="342127.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-            <img src="396395.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-            <img src="473330.jpg" class="d-block w-100" alt="...">
+    <div class="bg-layer">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active " data-bs-interval="5000">
+                <img src="342127.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                <img src="396395.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                <img src="473330.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
         </div>
     </div>
@@ -157,25 +173,27 @@
     <br>
 
     <!-- Player -->
-     <div class ="row">
-        <div class = "col-5">
-        </div>
-            <div class="card col-2" >
-                <img id = "avatarfull" src="..." class="card-img-top" alt="..." id = "avatarfull0">
-                <div class="card-body">
-                    <h5 class="card-title" id="name">ERROR</h5>
-                    <p class="card-text" id="rank_tier"></p>
-                    <p class="card-text" id="leaderboard_rank"></p>
-                    <p class="card-text" id="win"></p>
-                    <p class="card-text" id="lose"></p>
-                    <p class="card-text" id="loccountrycode"></p>
-                    <p class="card-text" id="last_login"></p>
-                    
-                    <a  class="btn btn-primary" onclick="Inspect();">Steam Profile</a>
+     <div class="ui-layer">
+        <div class ="row">
+            <div class = "col-5">
+            </div>
+                <div class="card col-2 text-bg-dark mb-3" >
+                    <img id = "avatarfull" src="..." class="card-img-top" alt="..." id = "avatarfull0">
+                    <div class="card-body">
+                        <h5 class="card-title" id="name">ERROR</h5>
+                        <p class="card-text" id="rank_tier"></p>
+                        <p class="card-text" id="leaderboard_rank"></p>
+                        <p class="card-text" id="win"></p>
+                        <p class="card-text" id="lose"></p>
+                        <p class="card-text" id="loccountrycode"></p>
+                        <p class="card-text" id="last_login"></p>
+                        
+                        <a  class="btn btn-primary" onclick="Inspect();">Steam Profile</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class = "col-5">
+            <div class = "col-5">
+            </div>
         </div>
     </div>
     <!-- /Player -->
