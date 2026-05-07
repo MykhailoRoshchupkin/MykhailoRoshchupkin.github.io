@@ -9,12 +9,41 @@
     
     
     <script type = "text/javascript">
+        player = [];
         function search()
         {
             steamID = document.getElementById("sID").value;
             localStorage.setItem("ID", steamID);
             window.location.href = "https://mykhailoroshchupkin.github.io/Players.html";
         }
+
+
+
+        async function GetData() 
+        {
+            steamID64 = localStorage.getItem("ID");
+            steamID64 = "76561197961562353";
+            steamID = BigInt(steamID64) - BigInt("76561197960265728");
+            const url = 'https://api.opendota.com/api/players/' + steamID.toString();
+            const options =
+            {
+            method: 'GET',
+            };
+            const response = await fetch(url, options);
+            const result = await response.text();
+            const myObj = JSON.parse(result);
+            player["rank_tier"] = myObj["rank_tier"];
+            window.alert(player["rank_tier"]);
+            
+        }
+
+        async function main() 
+        {
+            GetData();
+
+        }
+
+        main();
     </script>
 
 </head>
@@ -48,6 +77,17 @@
     </nav>
     <!-- /NAVBAR -->
 
+
+    <!-- Player -->
+    <div class="card mb-3">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <!-- /Player -->
 
 </nav>
     
